@@ -69,7 +69,7 @@ This code is built upon [Closer Look at 3D](https://github.com/zeliu98/CloserLoo
 # Cite
 ```
 @inproceedings{qian2021assanet,
-  title={ASSANet: An Anisotropical Separable Set Abstraction for Efficient Point Cloud Representation LearningSelf-Supervised Learning by Cross-Modal Audio-Video Clustering},
+  title={ASSANet: An Anisotropical Separable Set Abstraction for Efficient Point Cloud Representation Learning},
   author={Qian, Guocheng and Hammoud, Hasan Abed Al Kader and Li, Guohao and 
           Thabet, Ali and Ghanem, Bernard},
   booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
