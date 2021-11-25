@@ -1,0 +1,29 @@
+model:
+  name: assanet # ASSANet
+  width: 128  # the best reported in the paper is: C=128
+  depth: 3  # the best reported in the paper is: D=3
+  in_channel: 4
+  sa_config:
+    npoints: [4096, 1152, 304, 88]
+    radius: [[0.1, 0.2], [0.2, 0.4], [0.4, 0.8], [0.8, 1.6]]
+    nsample: [[16, 32], [16, 32], [16, 32], [16, 32]]
+    sample_method: fps
+    local_aggregation:
+      feature_type: 'assa'
+      reduction: mean
+      type: 'preconv'
+      pre_res: False # residual connetion in PreConv layer
+      post_res: True  # residual connetion in PostConv layer
+      layers: 3   # layers = layers of PreConv (before aggregation) + layers of PostConv (after aggregation)
+      post_layers: -1  # number of PostConv layers
+      grouper:
+        method: ball_query
+        normalize_xyz: True
+      conv:
+        method: conv1d
+        use_bn: True
+        activation:
+          type: ReLU
+  fp_mlps: [[64, 64], [128, 128], [256, 256], [512, 512]]
+  activation:
+    type: ReLU

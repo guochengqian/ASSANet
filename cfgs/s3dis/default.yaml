@@ -1,0 +1,58 @@
+batch_size: 8 # batch size Per GPU. 
+num_workers: 6
+print_freq: 10
+save_freq: 100
+val_freq: 10
+
+# data augmentation
+data:
+  datasets: 's3dis'
+  data_root: './data'
+  input_features_dim: 4
+  num_classes: 13
+  num_points: 15000
+  in_radius: 2.0
+  x_angle_range: 0.0
+  y_angle_range: 0.0
+  z_angle_range: 3.1415926
+  scale_low: 0.7
+  scale_high: 1.3
+  noise_std: 0.001
+  noise_clip: 0.05
+  translate_range: 0.0
+  color_drop: 0.2
+  augment_symmetries:
+    - 1
+    - 0
+    - 0
+  sampleDl: 0.04
+  num_steps: 2000  # number of spheres for one training epoch.
+
+
+
+# ---------------------------------------------------------------------------- #
+# Training options
+# ---------------------------------------------------------------------------- #
+epochs: 600
+start_epoch: 1
+warmup_epoch:  -1
+
+lr_scheduler:
+  name: 'step'  # step,cosine
+  decay_steps: 1
+  decay_rate: 0.9885531
+  on_epoch: True
+
+optimizer:
+  name: 'sgd'
+  weight_decay: 0.001
+  momentum: 0.98
+  lr: 0.0025  # LR per batch! for batch size 8 per GPU and 2 gpus -> lr *= 8*2
+
+# ---------------------------------------------------------------------------- #
+# io and misc
+# ---------------------------------------------------------------------------- #
+log_dir: './log/s3dis'
+
+wandb:
+  project: ASSA-Net-S3DIS
