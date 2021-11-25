@@ -55,4 +55,4 @@ optimizer:
 log_dir: './log/s3dis'
 
 wandb:
-  project: ASSA-Net-S3DIS
+  project: ASSANet-S3DIS
