@@ -103,7 +103,8 @@ class S3DISSeg(data.Dataset):
         if not os.path.exists(self.data_root):
             os.makedirs(self.data_root)
         self.folder = 'S3DIS'
-        self.data_dir = os.path.join(self.data_root, self.folder, 'Stanford3dDataset_v1.2', 'processed')
+        data_dir = os.path.join(self.data_root, self.folder, 'Stanford3dDataset_v1.2')
+        self.data_dir = os.path.join(data_dir, 'processed')
         if not os.path.exists(self.data_dir):
             os.makedirs(self.data_dir)
 
@@ -122,7 +123,7 @@ class S3DISSeg(data.Dataset):
                         cloud_points, cloud_colors, cloud_classes = pickle.load(f)
                 else:
                     # Get rooms of the current cloud
-                    cloud_folder = os.path.join(self.data_root, self.folder, 'Stanford3dDataset_v1.2', cloud_name)
+                    cloud_folder = os.path.join(data_dir, cloud_name)
                     room_folders = [os.path.join(cloud_folder, room) for room in os.listdir(cloud_folder) if
                                     os.path.isdir(os.path.join(cloud_folder, room))]
                     # Initiate containers
