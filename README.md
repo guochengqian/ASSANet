@@ -7,6 +7,8 @@ This is official repository of NeurIPS 2021 spotlight paper: [ASSANet: An Anisot
 </p>
 
 
+## News
+- 2022/06/10: This repo is not maintained anymore. Although one can still use the repo for reproducing our results in paper, we highly suggest one to use our re-implemented version hosted in [PointNeXt\&OpenPoints Lib](https://github.com/guochengqian/PointNeXt), where one can reproduce ASSANet with eased coding. 
 
 ## Installation
 ### Datasets
@@ -94,7 +96,7 @@ This code is built upon [Closer Look at 3D](https://github.com/zeliu98/CloserLoo
 ```
 @inproceedings{qian2021assanet,
   title={ASSANet: An Anisotropical Separable Set Abstraction for Efficient Point Cloud Representation Learning},
-  author={Qian, Guocheng and Hammoud, Hasan Abed Al Kader and Li, Guohao and 
+  author={Qian, Guocheng and Hammoud, Hasan and Li, Guohao and 
           Thabet, Ali and Ghanem, Bernard},
   booktitle={Advances in Neural Information Processing Systems (NeurIPS)},
   year={2021}
