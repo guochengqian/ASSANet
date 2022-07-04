@@ -1,4 +1,7 @@
 # ASSANet
+
+[arXiv](https://arxiv.org/abs/2110.10538) | [Supplementary](https://github.com/guochengqian/ASSANet/blob/main/misc/ASSANet_supplementary.pdf) | [New version of ASSANet Implementation](https://github.com/guochengqian/PointNeXt)
+
 This is official repository of NeurIPS 2021 spotlight paper: [ASSANet: An Anisotropical Separable Set Abstraction forEfficient Point Cloud Representation Learning](https://arxiv.org/abs/2110.10538).  
 
 <p float="middle">
@@ -50,11 +53,13 @@ source init.sh
     ```bash
     python -m torch.distributed.run --nnodes 1 --nproc_per_node 1 function/main_s3dis_dist.py --cfg cfgs/s3dis/assanet.yaml
     ```
-* ASSA-Net (L):
+    
+* SSA-Net (L):
+    
     ```bash
     python -m torch.distributed.run --nnodes 1 --nproc_per_node 1 function/main_s3dis_dist.py --cfg cfgs/s3dis/assanet_scale.yaml model.width 128 model.depth 3
-    ```
-Note: we trained all models using the default hyperparameters and using only one GPU (32G V100). ASSANet is also trainable in one GTX2080Ti. ASSANet (L) can be trained using multiple GTX2080Ti. 
+```
+    Note: we trained all models using the default hyperparameters and using only one GPU (32G V100). ASSANet is also trainable in one GTX2080Ti. ASSANet (L) can be trained using multiple GTX2080Ti. 
 
 
 
