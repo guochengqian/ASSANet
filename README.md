@@ -9,6 +9,7 @@ This is official repository of NeurIPS 2021 spotlight paper: [ASSANet: An Anisot
     <img src="misc/curve.png" width="60%"/> 
 </p>
 
+## This repo is deprecated Please refer to [PointNeXt](https://github.com/guochengqian/PointNeXt) for the latest code of ASSANet
 
 ## News
 - 2022/06/10: This repo is not maintained anymore. Although one can still use the repo for reproducing our results in paper, we highly suggest one to use our re-implemented version hosted in [PointNeXt\&OpenPoints Lib](https://github.com/guochengqian/PointNeXt), where one can reproduce ASSANet with eased coding. 
@@ -58,7 +59,7 @@ source init.sh
     
     ```bash
     python -m torch.distributed.run --nnodes 1 --nproc_per_node 1 function/main_s3dis_dist.py --cfg cfgs/s3dis/assanet_scale.yaml model.width 128 model.depth 3
-```
+    ```
     Note: we trained all models using the default hyperparameters and using only one GPU (32G V100). ASSANet is also trainable in one GTX2080Ti. ASSANet (L) can be trained using multiple GTX2080Ti. 
 
 
